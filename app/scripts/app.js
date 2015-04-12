@@ -81,22 +81,22 @@ angular
   .run(function ($rootScope) {
     $rootScope.users = [
       {
+        name: 'Sam',
+        username: 'sam',
+        image: 'sam.png',
+        age: '2 ans'
+      },
+      {
         name: 'David',
         username: 'david',
         image: 'david.png',
         age: '3 ans'
       },
       {
-        name: 'Sam',
-        username: 'sam',
-        image: 'sam.png',
-        age: '4 ans'
-      },
-      {
         name: 'Judith',
         username: 'judith',
         image: 'judith.png',
-        age: '5 ans'
+        age: '4 ans'
       }
     ];
 
@@ -179,7 +179,7 @@ angular
           {percent: 42}, {percent: 78}, {percent: 64}
         ],
         percent: 87,
-        date: new Date()
+        date: '11/04/2015'
       },
       {
         id: 2,
@@ -187,7 +187,7 @@ angular
         image: 'swsxb.png',
         pages: [{percent: 42}, {percent: 78}, {percent: 64}],
         percent: 67,
-        date: new Date()
+        date: '11/04/2015'
       }
     ];
   });

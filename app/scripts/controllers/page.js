@@ -30,7 +30,7 @@ angular.module('speechlogApp')
 	  			result = $scope.result = 'Yoann' + result.substring(5);
 	  		}
 	  		var l = new Levenshtein(result, $scope.page);
-	  		var percent = $scope.percent = (1 - l.distance / Math.max(result.length, $scope.page.length)) * 100;
+	  		var percent = $scope.percent = Math.floor((1 - l.distance / Math.max(result.length, $scope.page.length)) * 100);
 	  		console.info(result, l.distance, percent);
 	  		$scope.$digest();
 	  	};
