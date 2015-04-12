@@ -13,7 +13,8 @@ angular.module('speechlogApp')
     if ($scope.story) {
     	$scope.reading = {
     		id: $scope.readings[$scope.readings.length - 1].id + 1,
-    		name: $scope.story.url,
+    		title: $scope.story.title,
+    		image: $scope.story.image,
     		pages: [],
     		date: new Date()
     	};

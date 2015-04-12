@@ -67,7 +67,7 @@ angular
         templateUrl: 'views/stats.html',
         controller: 'StatsCtrl'
       })
-      .state('user.states.reading', {
+      .state('user.stats.reading', {
         url: '/reading/:id',
         templateUrl: 'views/reading.html',
         controller: 'ReadingCtrl'
@@ -173,15 +173,21 @@ angular
     $rootScope.readings = [
       {
         id: 1,
-        story: 'chargemap',
-        pages: [],
-        date: Date.now()
+        title: 'Startup Weekend Mulhouse',
+        image: 'swmlh.jpg',
+        pages: [
+          {percent: 42}, {percent: 78}, {percent: 64}
+        ],
+        percent: 87,
+        date: new Date()
       },
       {
         id: 2,
-      },
-      {
-        id: 3,
+        title: 'Startup Weekend Strasbourg',
+        image: 'swsxb.png',
+        pages: [{percent: 42}, {percent: 78}, {percent: 64}],
+        percent: 67,
+        date: new Date()
       }
     ];
   });

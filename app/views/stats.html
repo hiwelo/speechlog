@@ -1,1 +1,13 @@
 <p>This is the stats view.</p>
+<div ui-view>
+<canvas id="bar" class="chart chart-bar" data="data"
+  labels="labels"></canvas> 
+<ul>
+	<li ng-repeat="reading in readings">
+	<img nr-src="images/{{reading.image}}"/>
+	{{reading.title}}
+	{{reading.percent}} %
+	<a ui-sref="user.stats.reading({username:user.username, id:reading.id})">Details</a>
+	</li>
+</ul>
+</div>

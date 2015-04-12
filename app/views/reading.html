@@ -1,1 +1,14 @@
 <p>This is the reading view.</p>
+<img ng-src="images/{{reading.image}}"/>
+{{reading.title}}
+{{reading.date}}
+<canvas id="line" class="chart chart-line" data="data"
+  labels="labels" legend="true" series="series">
+</canvas>
+<ul>
+	<li ng-repeat="page in reading.pages">
+		{{page.text}}
+		{{page.result}}
+		{{page.percent}} %
+	</li>
+</ul>
