@@ -9,6 +9,13 @@
  */
 angular.module('speechlogApp')
   .controller('EndCtrl', function ($scope) {
+  	$scope.reading.date = '12/04/2015';
+  	$scope.reading.percent = 0;
+  	$scope.reading.pages.forEach(function (item, index, items) {
+  		$scope.reading.percent += Number(item.percent);
+  	});
+  	$scope.reading.percent /= $scope.reading.pages.length;
+  	$scope.reading.percent = Math.floor($scope.reading.percent);
     $scope.readings.push($scope.reading);
     console.info($scope.reading, $scope.readings);
     $scope.series = [$scope.story.title];
