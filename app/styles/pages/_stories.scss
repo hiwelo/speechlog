@@ -1,6 +1,5 @@
 .app--stories {
     display: block;
-    font-size: 0;
     list-style: none;
     margin: 100px auto 0 auto;
     min-width: 800px;
@@ -28,6 +27,34 @@
             }
         }
         
+        .app--stories-element-btn {
+            position: absolute; top: 0; left: 0;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            border: none;
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            z-index: 500;
+            
+            input {
+                position: absolute; top: 0; left: 0;
+                background-color: rgba($mediumGrey, .45);
+                border: none;
+                border-radius: 50%;
+                color: white;
+                font-size: 25px;
+                font-weight: 600;
+                height: 200px;
+                line-height: 200px;
+                text-align: center;
+                text-shadow: 0 0 .5em black;
+                width: 200px;
+            }
+        } 
+        
         .app--stories-element-title {
             color: $red;
             font-size: 30px;
@@ -36,14 +63,14 @@
             text-decoration: none;
         }
         
-        .app-stories-element-content {
+        .app--stories-element-content {
             color: $darkGrey;
             font-size: 18px;
             line-height: 1.5em;
             text-decoration: none;
         }
         
-        .app-stories-element-univers {
+        .app--stories-element-univers {
             color: $earth;
             font-size: 18px;
             font-weight: 600;
@@ -53,6 +80,14 @@
             &::before {
                 content: '#';
             }
+        }
+        
+        .app--stories-element-price {
+            color: $earth;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5em;
+            text-decoration: none;
         }
     }
 }
