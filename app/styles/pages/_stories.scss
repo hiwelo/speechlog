@@ -1,0 +1,58 @@
+.app--stories {
+    display: block;
+    font-size: 0;
+    list-style: none;
+    margin: 100px auto 0 auto;
+    min-width: 800px;
+    width: 75%;
+    
+    .app--stories-element {
+        position: relative;
+        display: block;
+        height: 200px;
+        margin: 50px auto;
+        padding: 15px 0 50px 250px;
+        width: 100%;
+        
+        .app--stories-element-thumbnail {
+            position: absolute; top: 0; left: 0;
+            display: block;
+            border-radius: 50%;
+            box-shadow: 0 0 10px grey;
+            height: 200px;
+            overflow: hidden;
+            width: 200px;
+            
+            img {
+                height: 200px;
+            }
+        }
+        
+        .app--stories-element-title {
+            color: $red;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 1.5em;
+            text-decoration: none;
+        }
+        
+        .app-stories-element-content {
+            color: $darkGrey;
+            font-size: 18px;
+            line-height: 1.5em;
+            text-decoration: none;
+        }
+        
+        .app-stories-element-univers {
+            color: $earth;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5em;
+            text-decoration: none;
+            
+            &::before {
+                content: '#';
+            }
+        }
+    }
+}
