@@ -1,0 +1,52 @@
+.app--login {
+    display: table;
+    height: 100vh;
+    table-layout: fixed;
+    width: 100vw;
+    
+    .app--login-form {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        
+        svg {
+            display: block;
+            height: 200px;
+            margin: 0 auto 50px auto;
+        }
+        
+        input {
+            display: inline-block;
+            border: 2px solid $earth;
+            background-color: transparent;
+            border-radius: .5em;
+            color: $red;
+            font-size: 1.15em;
+            font-weight: 500;
+            height: 40px;
+            margin: 0 .66em;
+            padding: .15em .33em;
+            text-align: center;
+            width: 250px;
+            
+            &[type=submit] {
+                display: block;
+                background-color: $vert;
+                border-color: $vert;
+                color: white;
+                line-height: auto;
+                margin: 1.5em auto;
+                padding: 0 .66em;
+                -webkit-appearance: none;
+                transition: all .2s;
+                width: auto;
+                
+                &:hover {
+                    background-color: $red;
+                    border-color: $red;
+                    color: white;
+                }
+            }
+        }
+    }
+}
