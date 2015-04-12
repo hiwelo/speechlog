@@ -53,7 +53,7 @@ angular
         controller: 'StoryCtrl'
       })
       .state('user.stories.story.page', {
-        url: '/page/:numero',
+        url: '/page/:number',
         templateUrl: 'views/page.html',
         controller: 'PageCtrl'
       })
@@ -102,31 +102,34 @@ angular
 
     $rootScope.stories = [
       {
-        title: 'ChargeMap',
-        url: 'chargemap',
-        pages: [{}, {}, {}],
-        bought: false
-      },
-      {
+        id: 1,
         title: 'Startup Weekend Mulhouse',
         url: 'swmlh',
         pages: ['les chaussettes de l\'archiduchesse', 'sont elles sèches', 'archi sèches'],
         bought: true
       },
       {
+        id: 2,
         title: 'Startup Weekend Strasbourg',
         url: 'swsxb',
         pages: [{}, {}, {}],
         bought: true
-      }
+      },
+      {
+        id: 3,
+        title: 'ChargeMap',
+        url: 'chargemap',
+        pages: [{}, {}, {}],
+        bought: false
+      },
     ];
 
     $rootScope.readings = [
       {
         id: 1,
         story: 'chargemap',
-
-        date: ''
+        pages: [],
+        date: Date.now()
       },
       {
         id: 2,
