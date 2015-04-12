@@ -178,3 +178,11 @@
         color: $mauve;
     }
 }
+
+.chart-container {
+    position: absolute; top: calc(50% - 300px); left: calc(50% - 400px);
+    height: 600px;
+    width: 800px;
+    
+    chart-legend { display: none; }
+}
