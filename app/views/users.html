@@ -1,6 +1,6 @@
 <ul class="app--userslist">
 	<li class="app--userslist-element" ng-repeat="user in users | orderBy: name">
-	    <a ui-sref="user({username: user.username})">
+	    <a ui-sref="user.dashboard({username: user.username})">
     		<div class="app--mainnav-visuel"><img ng-src="images/{{user.image}}" alt="Avatar {{user.name}}"></div>
     		{{user.name}}
     		{{user.age}}

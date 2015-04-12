@@ -13,6 +13,7 @@ angular.module('speechlogApp')
     $scope.page = $scope.story.pages[$stateParams.number - 1];
 
     if ($scope.page) {
+
 			var recognizing = false;
     	var recognition = new webkitSpeechRecognition();
   		recognition.continuous = false;
