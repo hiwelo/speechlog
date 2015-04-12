@@ -37,13 +37,18 @@ angular
         templateUrl: 'views/user.html',
         controller: 'UserCtrl'
       })
+      .state('user.dashboard', {
+        url: '/dashboard',
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl'
+      })
       .state('user.stories', {
         url: '/stories',
         templateUrl: 'views/stories.html',
         controller: 'StoriesCtrl'
       })
       .state('user.stories.story', {
-        url: '/:name',
+        url: '/:url',
         templateUrl: 'views/story.html',
         controller: 'StoryCtrl'
       })
@@ -99,25 +104,19 @@ angular
       {
         title: 'ChargeMap',
         url: 'chargemap',
-        pages: {
-
-        },
+        pages: [{}, {}, {}],
         bought: false
       },
       {
         title: 'Startup Weekend Mulhouse',
         url: 'swmlh',
-        pages: {
-
-        },
+        pages: ['les chaussettes de l\'archiduchesse', 'sont elles sèches', 'archi sèches'],
         bought: true
       },
       {
         title: 'Startup Weekend Strasbourg',
         url: 'swsxb',
-        pages: {
-
-        },
+        pages: [{}, {}, {}],
         bought: true
       }
     ];
