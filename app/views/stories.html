@@ -1,2 +1,11 @@
 <p>This is the stories view.</p>
-<div ui-view></div>
+<div ui-view>
+	<ul>
+		<li ng-repeat="story in stories | filter: {bought:true} | orderBy: title">
+			<img ng-src="images/{{story.image}}"/>
+			<a ui-sref="user.stories.story.page({username: user.username, url: story.url, number:1})">{{story.title}}</a>
+			{{story.description}}
+			{{story.tags}}
+		</li>
+	</ul>
+</div>

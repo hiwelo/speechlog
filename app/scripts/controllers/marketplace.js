@@ -9,8 +9,7 @@
  */
 angular.module('speechlogApp')
   .controller('MarketplaceCtrl', function ($scope, $filter) {
-    $scope.buy = function(url) {
-    	var story = $filter('filter')($scope.stories, {'url': url}, true)[0];
+    $scope.buy = function(story) {
     	if (story) {
     		story.bought = true;
     	}
