@@ -1,0 +1,66 @@
+.app--mainnav {
+    display: table;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    width: 100vw;
+    
+    .app--mainnav-element {
+        display: table-cell;
+        background-color: transparent;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.5em;
+        text-align: center;
+        vertical-align: middle;
+        
+        a {
+            color: inherit;
+            height: 100%;
+            text-decoration: none;
+            width: 100%;
+        }
+        
+        &:nth-of-type(1) {
+            color: $mauve;
+            .app--mainnav-visuel { background-color: $mauve; }
+        }
+        
+        &:nth-of-type(2) {
+            color: $red;
+            .app--mainnav-visuel { background-color: $red; }
+        }
+        
+        &:nth-of-type(3) {
+            color: $vert;
+            .app--mainnav-visuel { background-color: $vert; }
+        }
+        
+        .app--mainnav-visuel {
+            position: relative;
+            display: block;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(black, .66);
+            box-sizing: border-box;
+            height: 185px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+            width: 185px;
+            
+            svg {
+                position: absolute; top: calc(50% - 50px); left: 0;
+                display: block;
+                height: 100px;
+                text-align: center;
+                width: 100%;
+                
+                path {
+                    fill: white;
+                }
+            }
+            
+            &:first-of-type svg { top: calc(50% - 55px); }
+        }
+    }
+}
