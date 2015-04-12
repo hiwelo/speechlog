@@ -1,8 +1,10 @@
-<ul>
-	<li ng-repeat="user in users | orderBy: name">
-		<img ng-src="images/{{user.image}}"/>
-		<a ui-sref="user({username: user.username})">{{user.name}}</a>
-		{{user.age}}
-		{{user.tags}}
+<ul class="app--userslist">
+	<li class="app--userslist-element" ng-repeat="user in users | orderBy: name">
+	    <a ui-sref="user({username: user.username})">
+    		<div class="app--mainnav-visuel"><img ng-src="images/{{user.image}}" alt="Avatar {{user.name}}"></div>
+    		{{user.name}}
+    		{{user.age}}
+    		{{user.tags}}
+		</a>
 	</li>
 </ul>
