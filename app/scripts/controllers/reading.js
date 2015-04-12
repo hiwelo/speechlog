@@ -24,4 +24,5 @@ angular.module('speechlogApp')
     	$scope.data[0].push(item.percent);
     	i++;
     });
+    $scope.options = {scaleBeginAtZero:true};
   });

@@ -16,4 +16,5 @@ angular.module('speechlogApp')
     	$scope.labels.push(item.title + ' ' + item.date);
     	$scope.data[0].push(item.percent);
     });
+    $scope.options = {scaleBeginAtZero:true};
   });
