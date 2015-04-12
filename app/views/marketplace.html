@@ -1,10 +1,8 @@
-<p>This is the marketplace view.</p>
-<ul>
-	<li ng-repeat="story in stories | filter: {bought:false} | orderBy: title">
-		<img ng-src="images/{{story.image}}"/>
-		{{story.title}}
-		{{story.description}}
-		{{story.tags}}
-		<input type="submit" value="{{story.price}} €" ng-click="buy(story)"/>
+<ul class="app--stories">
+	<li class="app--stories-element" ng-repeat="story in stories | filter: {bought:false} | orderBy: title">
+		<div class="app--stories-element-btn" style="background-image: url('images/{{story.image}}');"><input type="submit" value="Acheter" ng-click="buy(story)"/></div>
+		<div class="app--stories-element-title">{{story.title}}</div>
+		<div class="app--stories-element-content">{{story.description}}</div>
+		<div class="app--stories-element-price">{{story.price}} €</div>
 	</li>
 </ul>

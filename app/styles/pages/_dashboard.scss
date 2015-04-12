@@ -1,10 +1,11 @@
 .app--mainnav {
     display: table;
     height: 100vh;
-    margin: 0;
+    margin: 0 15%;
+    min-width: 600px;
     padding: 0;
     table-layout: fixed;
-    width: 100vw;
+    width: calc(100vw - 30%);
     
     .app--mainnav-element {
         display: table-cell;
