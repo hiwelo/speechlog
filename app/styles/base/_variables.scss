@@ -1,0 +1,30 @@
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ * */
+
+$debug-mode: false;
+
+
+/**
+ * Set to true to force all elements to adopt `box-sizing: border-box;`
+ * @url paulirish.com/2012/box-sizing-border-box-ftw
+ * */
+
+$global-border-box: true;
+
+
+/**
+ * Set image & fonts path
+ * */
+
+$img-path: '../img';
+$fonts-path: '../fonts';
+ 
+
+/**
+ * RWD Breakpoints
+ * */
+$break-small:   768px;
+$break-medium:  992px;
+$break-large:   1200px;

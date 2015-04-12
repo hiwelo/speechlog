@@ -1,0 +1,207 @@
+/**
+ * Mixin creating a basic CSS triangle
+ * @include triangle(up, #000, 50px)
+ * */
+
+@mixin triangle($direction:up, $color:#000, $size:100px) {
+    @if($direction == up) {
+        border-color: transparent transparent $color;
+        border-style: solid;
+        border-width: 0 $size $size;
+        height: 0;
+        width: 0;
+    }
+    
+    @if ($direction == down) {
+        border-color: $color transparent transparent transparent;
+        border-style: solid;
+        border-width: $size;
+        height: 0;
+        width: 0;
+    }
+    
+    @if ($direction == left) {
+        border-color: transparent $color transparent transparent;
+        border-style: solid;
+        border-width: $size $size $size 0;
+        height: 0;
+        width: 0;
+    }
+    
+    @if ($direction == right) {
+        border-color: transparent transparent transparent $color;
+        border-style: solid;
+        border-width: $size 0 $size $size;
+        height: 0;
+        width: 0;
+    }
+}
+
+
+/**
+ * Mixin creating font-face, with a FontSpring template
+ * @include fontface('family', 'fontname', '../fonts/');
+ * */
+
+@mixin fontface($font-family, $font-name, $font-url:$fonts-path) {
+    @font-face {
+        font: {
+            family: $font-family;
+            style: normal;
+            weight: normal;
+        }
+        src: url($font-url + '/' + $font-name + '.eot');
+        src: url($font-url + '/' + $font-name + '.eot#iefix') format('embedded-opentype'),
+             url($font-url + '/' + $font-name + '.woff') format('woff'),
+             url($font-url + '/' + $font-name + '.ttf') format('truetype'),
+             url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
+    }
+}
+
+
+/**
+ * Mixin used to add a style into a specific mediaquery
+ * @include respond-to(media) { @content }
+ * */
+
+@mixin respond-to($media) {
+    @if $media == phone {
+        @media only screen and (max-width: $break-small) { @content; }
+    }
+    
+    @if $media == tablet {
+        @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium) { @content; }
+    }
+    
+    @if $media == desktop {
+        @media only screen and (min-width: $break-medium +1) and (max-width $break-large) { @content; }
+    }
+    
+    @if $media == big {
+        @media only screen and (min-width: $break-large + 1) { @content; }
+    }
+}
+
+
+/**
+ * Mixin to support ligatures problematics
+ * */
+
+@mixin ligature {
+    -webkit-font-feature-settings: "liga", "dlig";
+       -moz-font-feature-settings: "liga=1, dlig=1";
+        -ms-font-feature-settings: "liga", "dlig";
+            font-feature-settings: "liga", "dlig";
+}
+
+
+/**
+ * Mixin to hide a text
+ * */
+
+@mixin hide-text {
+    display: block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+
+/**
+ * Mixin to create some linear background gradiant
+ * */
+
+@mixin linear-gradient($place, $bcolor1, $bcolor2) {
+    background-image: -webkit-linear-gradient($place, $bcolor1, $bcolor2);
+    background-image:    -moz-linear-gradient($place, $bcolor1, $bcolor2);
+    background-image:     -ms-linear-gradient($place, $bcolor1, $bcolor2);
+    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#{bcolor1}", endColorstr="#{bcolor2}"); /* IE6/7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$bcolor1}', endColorstr='#{$bcolor2}')"; /* IE8+ */
+    
+    background-image: linear-gradient($place, $bcolor1, $bcolor2);
+}
+
+
+/**
+ * Transform
+ * */
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+            transform: $transform;
+}
+
+
+/**
+ * Cross-browser opacity
+ * */
+
+@mixin opacity($value) {
+    $ms_opacity: $value * 100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha($ms_opacity)";
+        filter: alpha(opacity=$ms_opacity);
+    opacity: $value;
+}
+
+
+/**
+ * Placeholder styling
+ * */
+
+@mixin placeholder {
+    &.placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+}
+
+
+/**
+ * Vector background with PNG fallback 
+ * */
+
+@mixin vector-bg-with-fallback($name) {
+    background-image: url('#{$imgsrc}/#{$name}.png');
+    background-image: none, url('#{$imgsrc}/#{$name}.svg');
+}
+
+
+/**
+ * Animation mixin
+ * @include animation(center center, flash, 2s, $easeInOut, 0, 2, infinite, alternate);
+ * */
+ 
+@mixin animation ($name, $origin, $duration, $easing, $delay, $iteration, $direction) {
+    -webkit-animation-name: $name;
+    -webkit-transform-origin: $origin;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-timing-function: $easing;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-iteration-count: $iteration;
+    -webkit-animation-direction: $direction;
+    
+    -moz-animation-name: $name;
+    -moz-transform-origin: $origin;
+    -moz-animation-duration: $duration;
+    -moz-animation-timing-function: $easing;
+    -moz-animation-delay: $delay;
+    -moz-animation-iteration-count: $iteration;
+    -moz-animation-direction: $direction;
+    
+    -ms-animation-name: $name;
+    -ms-transform-origin: $origin;
+    -ms-animation-duration: $duration;
+    -ms-animation-timing-function: $easing;
+    -ms-animation-delay: $delay;
+    -ms-animation-iteration-count: $iteration;
+    -ms-animation-direction: $direction;
+    
+    animation-name: $name;
+    transform-origin: $origin;
+    animation-duration: $duration;
+    animation-timing-function: $easing;
+    animation-delay: $delay;
+    animation-iteration-count: $iteration;
+    animation-direction: $direction;
+}

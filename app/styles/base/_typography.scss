@@ -1,0 +1,71 @@
+/**
+ * Typographic variables
+ * 
+ * All typographic import must be load by a link tag, outside this scss file
+ * */
+
+$labeur-font:   'Maven', Helvetica, Arial, sans-serif;
+$labeur-size:   16px;
+$labeur-line:   1.5em;
+
+$title-font:    $labeur-font;
+$quote-font:    $labeur-font;
+$mono-font:     'Lucida Console', 'Courier New', Courier, monospace;
+
+$icofont:       'fontello';
+
+
+body {
+    font-family: $labeur-font;
+    font-size: $labeur-size;
+    line-height: $labeur-line;
+}
+
+
+@font-face {
+    font-family: 'Maven';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/mavenpro-black-webfont.eot');
+    src: url('../fonts/mavenpro-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mavenpro-black-webfont.woff2') format('woff2'),
+         url('../fonts/mavenpro-black-webfont.woff') format('woff'),
+         url('../fonts/mavenpro-black-webfont.ttf') format('truetype'),
+         url('../fonts/mavenpro-black-webfont.svg#maven_problack') format('svg');
+}
+
+@font-face {
+    font-family: 'Maven';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/mavenpro-bold-webfont.eot');
+    src: url('../fonts/mavenpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mavenpro-bold-webfont.woff2') format('woff2'),
+         url('../fonts/mavenpro-bold-webfont.woff') format('woff'),
+         url('../fonts/mavenpro-bold-webfont.ttf') format('truetype'),
+         url('../fonts/mavenpro-bold-webfont.svg#maven_probold') format('svg');
+}
+
+@font-face {
+    font-family: 'Maven';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/mavenpro-medium-webfont.eot');
+    src: url('../fonts/mavenpro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mavenpro-medium-webfont.woff2') format('woff2'),
+         url('../fonts/mavenpro-medium-webfont.woff') format('woff'),
+         url('../fonts/mavenpro-medium-webfont.ttf') format('truetype'),
+         url('../fonts/mavenpro-medium-webfont.svg#maven_promedium') format('svg');
+}
+
+@font-face {
+    font-family: 'Maven';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/mavenpro-regular-webfont.eot');
+    src: url('../fonts/mavenpro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mavenpro-regular-webfont.woff2') format('woff2'),
+         url('../fonts/mavenpro-regular-webfont.woff') format('woff'),
+         url('../fonts/mavenpro-regular-webfont.ttf') format('truetype'),
+         url('../fonts/mavenpro-regular-webfont.svg#maven_proregular') format('svg');
+}

@@ -1,0 +1,62 @@
+.app--userbox {
+    position: fixed; top: 20px; right: 20px;
+    display: block;
+    
+    .app-userbox-avatar {
+        position: absolute; top: 0; right: 0;
+        display: block;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 5px black;
+        height: 70px;
+        overflow: hidden;
+        width: 70px;
+        
+        &:hover {
+            &::after {
+                position: absolute; top: 0; right: 0;
+                background-color: rgba(black, .33);
+                border-radius: 50%;
+                color: white;
+                content: 'x';
+                font-family: $labeur-font;
+                font-size: 25px;
+                height: 70px;
+                line-height: 70px;
+                text-align: center;
+                text-decoration: none;
+                width: 70px;
+                z-index: 9999;
+            }
+        }
+        
+        img,
+        svg {
+            height: auto;
+            width: 100%;
+        }
+    }
+    
+    .app-userbox-name,
+    .app-userbox-age {
+        margin-right: 100px;
+        text-align: right;
+    }
+    
+    .app-userbox-name {
+        color: $red;
+        font-size: 24px;
+        font-weight: 600;
+        height: 35px;
+        line-height: 35px;
+        padding-top: 5px;
+    }
+    
+    .app-userbox-age {
+        color: $earth;
+        font-size: 18px;
+        font-weight: 500;
+        height: 25px;
+        line-height: 25px;
+    }
+}

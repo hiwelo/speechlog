@@ -1,91 +1,94 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-// bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-// endbower
+@charset "UTF-8";
+/**
+ * Speechlog
+ * 
+ * This is the main SASS file.
+ * 
+ * SASS Directory structure :
+ * 
+ *  scss/
+ *  |
+ *  |-- base/
+ *  |   |-- _reset.scss         # Reset/Normalize
+ *  |   |-- _typography.scss    # Typographic rules
+ *  |   |-- _colors.scss        # Color variables
+ *  |   ...
+ *  |
+ *  |-- components/
+ *  |   |-- _buttons.scss       # Buttons
+ *  |   |-- _carousel.scss      # Carousel
+ *  |   |-- _cover.scss         # Cover
+ *  |   |-- _dropdown.scss      # Dropdown
+ *  |   |-- _navigation.scss    # Navigation
+ *  |   ...
+ *  |
+ *  |-- helpers/
+ *  |   |-- _variables.scss     # Sass variables
+ *  |   |-- _functions.scss     # Sass functions
+ *  |   |-- _mixins.scss        # Sass mixins
+ *  |   |-- _helpers.scss       # Class & placeholders helpers
+ *  |   ...
+ *  |
+ *  |-- layout/
+ *  |   |-- _grid.scss          # Grid system
+ *  |   |-- _header.scss        # Header
+ *  |   |-- _footer.scss        # Footer
+ *  |   |-- _sidebar.scss       # Sidebar
+ *  |   |-- _forms.scss         # Forms
+ *  |   ... 
+ *  |
+ *  |
+ *  |-- pages/
+ *  |   |-- _home.scss          # Home specific styles
+ *  |   ...
+ *  |
+ *  |-- vendors/                # CSS or Sass from other projects
+ *  |   ...
+ *  |
+ *  `-- main.scss               # Primary Sass file
+ * 
+ * 
+ * @package     Projet
+ * @author      Damien Senger <hi@hiwelo.co>
+ * @copyright   2015 Hiwelo 
+ * @license     GNU GPL v3 <https://www.gnu.org/licenses/gpl-3.0.fr.html>
+ * @link        hiwelo.co
+ * */
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
 
-body {
-  padding: 0;
-}
+/** Base **/
+@import "base/variables";
+@import "base/reset";
+@import "base/typography";
+@import "base/colors";
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+/** Components **/
+@import "components/buttons";
+@import "components/carousel";
+@import "components/cover";
+@import "components/dropdown";
+@import "components/navigation";
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
+/** Helpers **/
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/helpers";
 
-.container-narrow > hr {
-  margin: 30px 0;
-}
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+/** Layout **/
+@import "layout/userbox";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/forms";
 
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+/** Pages **/
+@import "pages/dashboard";
 
-  p + h4 {
-    margin-top: 28px;
-  }
-}
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
+/** Debug mode, if asked **/
+@import "helpers/debug_mode";

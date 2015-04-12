@@ -1,0 +1,7 @@
+/**
+ * Percent calculator 
+ * */
+
+@function percent($target, $container) {
+    @return ($target / $container) * 100%;
+}
