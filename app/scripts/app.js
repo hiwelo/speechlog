@@ -133,7 +133,10 @@ angular
         url: 'chargemap',
         image: 'chargemap.png',
         description: 'Trouvez les points de charge pour votre voiture électrique.',
-        pages: [{}, {}, {}],
+        pages: [
+          'Yoann est un entrepreneur récidiviste qui aime les voitures électriques.',
+          'Son application ChargeMap référence les points de charge pour les voitures électriques dans le monde entier.',
+          'Avec l\'application ChargeMap sur son smartphone il est très facile de trouver le point de charge le plus proche.'],
         bought: false,
         price: '0,99'
       },

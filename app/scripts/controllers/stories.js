@@ -8,6 +8,6 @@
  * Controller of the speechlogApp
  */
 angular.module('speechlogApp')
-  .controller('StoriesCtrl', function ($scope) {
+  .controller('StoriesCtrl', function () {
     
   });

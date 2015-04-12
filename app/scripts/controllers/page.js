@@ -26,6 +26,9 @@ angular.module('speechlogApp')
 
 	  	recognition.onresult = function(event) {
 	  		var result = $scope.result = capitalize(event.results[0][0].transcript) + '.';
+	  		if (result.match(/^Yohan/gi)) {
+	  			result = $scope.result = 'Yoann' + result.substring(5);
+	  		}
 	  		var l = new Levenshtein(result, $scope.page);
 	  		var percent = $scope.percent = (1 - l.distance / Math.max(result.length, $scope.page.length)) * 100;
 	  		console.info(result, l.distance, percent);
@@ -47,13 +50,13 @@ angular.module('speechlogApp')
 	  };
 
   	$scope.nextPage = function() {
-  		console.info('nextPage');
   		$scope.reading.pages.push({result: $scope.result, percent: $scope.percent});
-  		if ($stateParams.number == $scope.story.pages.length)
+  		if (Number($stateParams.number) === $scope.story.pages.length) {
   			$state.go('user.stories.story.end', {username: $stateParams.username, url: $stateParams.url});
-  		else
+  		} else {
   			$state.go('user.stories.story.page', {username: $stateParams.username, url: $stateParams.url, number: Number($stateParams.number) + 1});
-  	}
+  		}
+  	};
 
     var first_char = /\S/;
 		function capitalize(s) {

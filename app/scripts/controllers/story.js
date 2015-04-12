@@ -9,9 +9,7 @@
  */
 angular.module('speechlogApp')
   .controller('StoryCtrl', function ($scope, $state, $stateParams, $filter) {
-  	console.info('StoryCtrl', $stateParams);
     $scope.story = $filter('filter')($scope.stories, {'url': $stateParams.url}, true)[0];
-    console.info($scope.story);
     if ($scope.story) {
     	$scope.reading = {
     		id: $scope.readings[$scope.readings.length - 1].id + 1,
@@ -19,7 +17,6 @@ angular.module('speechlogApp')
     		pages: [],
     		date: new Date()
     	};
-    	console.info($scope.reading);
     } else {
     	$state.go('user.stories', {username: $stateParams.username});
     }
